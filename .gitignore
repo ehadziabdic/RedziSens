@@ -1,3 +1,4 @@
 # Keep this file tracked
 !.gitignore
 desktop.ini
+.venv/
