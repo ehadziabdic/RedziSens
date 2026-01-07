@@ -44,7 +44,7 @@ The wearable dashboard is currently deployed and listening for live events from 
 **[View Live Dashboard](https://stressmonitor-ed5d0.web.app/)**
 
 The survey-based webapp is currently deployed and ready for use.
-**[Visit Web App](https://stressmonitor-ed5d0.web.app/)**
+**[Visit Web App]()**
 
 ### 📹 Prototypes Video Showcase
 
@@ -63,13 +63,13 @@ The solution consists of three main components connected via the cloud:
 2. **Backend (Firebase):** Acts as the real-time bridge, storing sensor readings and stress labels with timestamp validation.
 3. **Frontend (React Dashboard):** A live interface for visualizing stress trends, heart rate variability, and historical logs.
 
-![Architecture Diagram](Diagrams\architecture_diagram.png)
+![Architecture Diagram](Diagrams/architecture_diagram.png)
 
 ## 🧠 Machine Learning Pipeline
 
 We experimented with 9 different architectures before finalizing the edge model.
 
-![ML Pipeline Diagram](Diagrams\ml_pipeline_diagram.png)
+![ML Pipeline Diagram](Diagrams/ml_pipeline_diagram.png)
 
 ### 1. Data Processing
 
@@ -91,7 +91,7 @@ For the wearable application, we combined the strengths of both top models:
 - **GRU Layers:** Capture temporal dependencies over the 30-step window. It is faster and more "mobile-friendly" than a standard LSTM.
 - **Performance:** The hybrid model showed realistic generalization (avoiding pure CNN overfitting) and was exported as `stress_model.pt` for Android.
 
-![Final Model Diagram](Diagrams\model_diagram.png)
+![Final Model Diagram](Diagrams/model_diagram.png)
 
 ## 📱 Prototypes
 
