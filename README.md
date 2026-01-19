@@ -16,7 +16,7 @@ A complete end-to-end IoT solution for real-time stress detection. This system u
 
 - [Overview](#-overview)
 - [System Architecture](#%EF%B8%8F-system-architecture)
-- [Demo & Live Dashboard](#-demo--live-dashboard)
+- [Demos & Live Dashboards](#-demos--live-dashboards)
 - [Machine Learning Pipeline](#-machine-learning-pipeline)
 - [Prototypes](#-prototypes)
 - [Repository Structure](#-repository-structure)
@@ -36,18 +36,24 @@ This project implements a **Multimodal Stress Monitoring System** that:
 
 The system was developed through rigorous phases: from EDA and baseline LSTM models to a refined **Hybrid CNN + GRU** architecture optimized for mobile deployment.
 
-## 🎥 Demo & Live Dashboard
+## 🎥 Demos & Live Dashboards
 
-### 🔴 Live Prototype
+### 🔴 Live Prototypes
 
-The web dashboard is currently deployed and listening for live events from wearable devices.
+The wearable dashboard is currently deployed and listening for live events from wearable devices.
 **[View Live Dashboard](https://stressmonitor-ed5d0.web.app/)**
 
-### 📹 Prototype Video Showcase
+The survey-based webapp is currently deployed and ready for use.
+**[Visit Web App]()**
 
-[![Prototype Showcase](https://img.youtube.com/vi/G_Cdquk34x8/hqdefault.jpg)](https://www.youtube.com/watch?v=G_Cdquk34x8)
+### 📹 Prototypes Video Showcase
 
-*A showcase of the Wearable app performing inference and the React Dashboard updating in real-time.*
+[![Wearable Prototype](https://img.youtube.com/vi/G_Cdquk34x8/hqdefault.jpg)](https://www.youtube.com/watch?v=G_Cdquk34x8)
+[![Survey-Based Prototype](https://img.youtube.com/vi/1iY4-zavq-E/hqdefault.jpg)](https://www.youtube.com/watch?v=1iY4-zavq-E) 
+
+*1st:  A showcase of the Wearable app performing inference and the React Dashboard updating in real-time.*
+
+*2st:  A showcase of the Survey-based webapp performing inference in real-time.*
 
 ## ⚙️ System Architecture
 
@@ -57,13 +63,13 @@ The solution consists of three main components connected via the cloud:
 2. **Backend (Firebase):** Acts as the real-time bridge, storing sensor readings and stress labels with timestamp validation.
 3. **Frontend (React Dashboard):** A live interface for visualizing stress trends, heart rate variability, and historical logs.
 
-![Architecture Diagram](Diagrams\architecture_diagram.png)
+![Architecture Diagram](Diagrams/architecture_diagram.png)
 
 ## 🧠 Machine Learning Pipeline
 
 We experimented with 9 different architectures before finalizing the edge model.
 
-![ML Pipeline Diagram](Diagrams\ml_pipeline_diagram.png)
+![ML Pipeline Diagram](Diagrams/ml_pipeline_diagram.png)
 
 ### 1. Data Processing
 
@@ -85,7 +91,7 @@ For the wearable application, we combined the strengths of both top models:
 - **GRU Layers:** Capture temporal dependencies over the 30-step window. It is faster and more "mobile-friendly" than a standard LSTM.
 - **Performance:** The hybrid model showed realistic generalization (avoiding pure CNN overfitting) and was exported as `stress_model.pt` for Android.
 
-![Final Model Diagram](Diagrams\model_diagram.png)
+![Final Model Diagram](Diagrams/model_diagram.png)
 
 ## 📱 Prototypes
 
@@ -111,6 +117,7 @@ A Dark-mode UI hosted on **Firebase**.
 ├── Code
 │   ├── Comparison              # Jupyter notebooks comparing model performance
 │   ├── EDA                     # Exploratory Data Analysis notebooks
+│   ├── SurveyAPI               # Server starter for survey-based webapp
 │   ├── Traning                 # Training scripts for baseline and improved models
 │   └── Traning-waearable       # Final Hybrid model training & .pt android export
 ├── Dataset
@@ -183,47 +190,9 @@ The Hybrid CNN+GRU model achieved a **97% accuracy** on the final test set, demo
 
 ## 👥 Contributors
 
-- **Emin Hadžiabdić** - Role: Lead Developer (ML Training, Android App, Web Dashboard, IoT)
-- **Armin Memišević** - Role: Data Scientist (Dataset Selection, EDA, ML Pipeline Design, Demo)
-- **Muhammed Pašić** - Role: Researcher (Problem Definition, Literature Review, Reporting)
-
-### Workflow and Milestones
-
-The project was executed in phases, moving from theoretical research to practical IoT deployment.
-
-| Task | Owner | Status |
-| :--- | :--- | :--- |
-| Problem definition | Muhammed Pašić | ✅ Completed |
-| Research Summary | Emin Hadžiabdić | ✅ Completed |
-| Dataset research | Muhammed Pašić | ✅ Completed |
-| Dataset selection | Armin Memišević | ✅ Completed |
-| Perform EDA on datasets | Armin Memišević | ✅ Completed |
-| Project Report | Muhammed Pašić | ✅ Completed |
-| Presentation | Emin Hadžiabdić | ✅ Completed |
-| Design ML pipeline | Armin Memišević | ✅ Completed |
-| Implemented Baseline Model | Emin Hadžiabdić | ✅ Completed |
-| Implemented 8 Improved Models | Emin Hadžiabdić | ✅ Completed |
-| Comparison tables for base models | Emin Hadžiabdić | ✅ Completed |
-| Implemented 2 Final models | Emin Hadžiabdić | ✅ Completed |
-| Comparison tables for final models | Emin Hadžiabdić | ✅ Completed |
-| Updated Drive and GitHub Repository | Emin Hadžiabdić | ✅ Completed |
-| Analyzed results, errors, limitations | Muhammed Pašić | ✅ Completed |
-| Performed explainability/interpretability check | Muhammed Pašić | ✅ Completed |
-| Take care of biases and ethical aspects | Muhammed Pašić | ✅ Completed |
-| Finish Evaluation Report | Muhammed Pašić | ✅ Completed |
-| Updated Drive and GitHub Repository | Emin Hadžiabdić | ✅ Completed |
-| Implemented prototype as pygame (for reference) | Armin Memišević | ✅ Completed |
-| Implemented survay-based webapp | Armin Memišević | ✅ Completed |
-| Simulated wearable and stream data | Emin Hadžiabdić | ✅ Completed |
-| Implemented wearable app | Emin Hadžiabdić | ✅ Completed |
-| Trained model for wearable (final) | Emin Hadžiabdić | ✅ Completed |
-| Implemented web dashboard for wearable | Emin Hadžiabdić | ✅ Completed |
-| Updated Drive and GitHub Repository | Emin Hadžiabdić | ✅ Completed |
-| Record video of protoptype | Emin Hadžiabdić | ✅ Completed |
-| Summarized all work we done | Muhammed Pašić | ✅ Completed |
-| Prepared final report | Muhammed Pašić | ✅ Completed |
-| Prepared final presentation (poster) | Muhammed Pašić | ✅ Completed |
-| Final Drive and GitHub Repository update | Emin Hadžiabdić | ✅ Completed |
+- **Emin Hadžiabdić** [@ehadziabdic]
+- **Armin Memišević** [@arminn2206]
+- **Muhammed Pašić** [@MuhaxD]
 
 ## 📄 License
 
