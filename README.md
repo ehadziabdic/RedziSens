@@ -44,7 +44,11 @@ The wearable dashboard is currently deployed and listening for live events from 
 **[View Live Dashboard](https://stressmonitor-ed5d0.web.app/)**
 
 The survey-based webapp is currently deployed and ready for use.
+<<<<<<< HEAD
 **[Visit Web App]()**
+=======
+**[Visit Web App](https://stressguard-survey-a-7po2.bolt.host/)**
+>>>>>>> 947a4f0de101dd5693115eca3e5de0963e7f00ce
 
 ### 📹 Prototypes Video Showcase
 
